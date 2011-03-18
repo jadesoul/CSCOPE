@@ -1,72 +1,33 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" _
-" __ |
-" / | /
-" __ |
-" by Amix - http://amix.dk/
-"
-" Maintainer: Amir Salihefendic <amix3k at gmail.com>
-" Version: 2.0
-" Last Change: 12/08/06 13:39:28
-" Fixed (win32 compatible) by: redguardtoo <chb_sh at gmail.com>
-"
+" by Leave Meng  <leaveboy at gmail.com>
+" Maintainer: Leave Meng  <leaveboy at gmail.com>
+" Version: 1.0
+" Last Change:  2011年 03月 18日 星期五 10:56:18 CST
 " Sections:
-" ----------------------
-" *> General
-" *> Colors and Font
-" *> Fileformat
-" *> VIM userinterface
-" ------ *> Statusline
-" *> Visual
-" *> Moving around and tab
-" *> General Autocommand
-" *> Parenthesis/bracket expanding
-" *> General Abbrev
-" *> Editing mappings etc.
-" *> Command-line config
-" *> Buffer realted
-" *> Files and backup
-" *> Folding
-" *> Text option
-" ------ *> Indent
-" *> Spell checking
-" *> Plugin configuration
-" ------ *> Yank ring
-" ------ *> File explorer
-" ------ *> Minibuffer
-" ------ *> Tag list (ctags) - not used
-" ------ *> LaTeX Suite thing
-" *> Filetype generic
-" ------ *> Todo
-" ------ *> VIM
-" ------ *> HTML related
-" ------ *> Ruby & PHP section
-" ------ *> Python section
-" ------ *> Cheetah section
-" ------ *> Java section
-" ------ *> JavaScript section
-" ------ *> C mapping
-" ------ *> SML
-" ------ *> Scheme binding
-" *> Snippet
-" ------ *> Python
-" ------ *> javaScript
-" *> Cope
-" *> MISC
+" * Support filetype
+" Todo
+" VIM
+" HTML related
+" Ruby & PHP section
+" Python2&3 section
+" Cheetah section
+" Java section
+" JavaScript section
+" C/C++ mapping
+" SML
+" Scheme binding
+" ******************Snippet
+" Python
+" javaScript
+"  
+" PS: some script from internet!
 "
-" Tip:
-" If you find anything that you can't understand than do this:
-" help keyword OR helpgrep keyword
-" Example:
-" Go into command-line mode and type helpgrep nocompatible, ie.
-" :helpgrep nocompatible
-" then press <leader>c to see the results, or :botright cw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
+" General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Get out of VI's compatible mode..
+"Get out of VIM's compatible mode..
 set nocompatible
 
 function! MySys()
@@ -77,7 +38,7 @@ if MySys() == "linux" || MySys() == "mac"
 set shell=bash
 else
 "I have to run win32 python without cygwin
-"set shell=E:\cygwin\bin\sh
+set shell=D:\cygwin\bin\sh
 endif
 
 "Sets how many lines of history VIM har to remember
@@ -243,7 +204,7 @@ set hlsearch
 set laststatus=2
 
 function! CurDir()
-let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+let curdir = substitute(getcwd(), '/Users/lm/', "~/", "g")
 return curdir
 endfunction
 
@@ -358,7 +319,6 @@ endif
 
 "My information
 ia xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-"iab xname Amir Salihefendic
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings etc.
@@ -591,14 +551,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Filetype generic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Todo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"au BufNewFile,BufRead *.todo so ~/vim_local/syntax/amido.vim
-
-""""""""""""""""""""""""""""""
-" => VIM
-""""""""""""""""""""""""""""""
 if has("autocmd")
 au BufRead,BufNew *.vim map <buffer> <leader><space> :w!<cr>:source %<cr>
 endif
