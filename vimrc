@@ -38,7 +38,7 @@ if MySys() == "linux" || MySys() == "mac"
 set shell=bash
 else
 "I have to run win32 python without cygwin
-set shell=D:\cygwin\bin\sh
+"set shell=D:\cygwin\bin\sh
 endif
 
 "Sets how many lines of history VIM har to remember
