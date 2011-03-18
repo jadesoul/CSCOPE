@@ -1,0 +1,21 @@
+#!/bin/sh
+cur_path=`pwd`
+sudo mkdir /etc/vim/ -p
+mkdir /home/${USER}/.gnome2/nautilus-scripts -p
+sudo cp ${cur_path}/CSCOPE /usr/bin
+sudo chmod 775 /usr/bin/CSCOPE
+#config file for every user
+cmd="cp ${cur_path}/vimrc /etc/vim/ -f"
+echo $cmd
+sudo $cmd
+
+#copy plugin for current user
+cmd="cp ${cur_path}/.vim /home/${USER}/ -rf"
+echo $cmd
+sudo $cmd
+
+#copy right-click menu for current user
+cmd="cp ${cur_path}/GVIM_* /home/${USER}/.gnome2/nautilus-scripts/ -f"
+echo $cmd
+sudo $cmd
+sudo chmod +x /home/${USER}/.gnome2/nautilus-scripts/ -R

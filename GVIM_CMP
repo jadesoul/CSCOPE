@@ -1,0 +1,2 @@
+#!/bin/sh
+gvimdiff $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
