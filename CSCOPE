@@ -1,5 +1,5 @@
 #!/bin/bash
-find . -name "*.h" -o -name "*.c" -o -name "*.cc" -o -name "*.csp" > cscope.files
+find . -name "*.h" -o -name "*.c" -o -name "*.cc" -o -name "*.csp" -o -name "*.cpp" -o -name "*.hpp" > cscope.files
 cscope -bkq -i cscope.files
 ctags -R --c-kinds=+p --fields=+iaS  --extra=+q #/usr/include/
 #ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /usr/include/c++/4.4.3/
