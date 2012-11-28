@@ -126,7 +126,7 @@ map <leader>$ :syntax sync fromstart<cr>
 "Highlight current
 if has("gui_running")
 if has("cursorline")
-set cursorline
+"set cursorline
 "hi cursorline guibg=#333333
 "hi CursorColumn guibg=#333333
 endif
@@ -168,7 +168,7 @@ set lz
 set hid
 
 "set current curline
-set cursorline
+"set cursorline
 
 "Set backspace
 set backspace=eol,start,indent
